@@ -1,0 +1,304 @@
+@font-face {
+  font-family: myfont;
+  src: url("../fonts/Salazur.ttf");
+}
+@font-face {
+  font-family: myf2;
+  src: url("../fonts/aremat.ttf");
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav a:hover {
+  scale: 1.1;
+  color: goldenrod;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#checkbox,
+nav label {
+  display: none;
+}
+
+#navname {
+  padding-left: 50px;
+  width: 40%;
+  scale: 1.1;
+}
+
+a::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  border-radius: 25px;
+  background: goldenrod;
+  position: absolute;
+  top: 150%;
+  left: 0;
+  scale: 0;
+}
+a:hover::after {
+  scale: 1;
+  transition: 0.2s linear;
+}
+
+nav a {
+  padding-right: 20px;
+  transition: 0.5s linear;
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+.imgsec {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.imgsec img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1;
+  transition: 0.5s linear;
+}
+
+.imgsec img:hover {
+  opacity: 1;
+}
+
+.imgsec:hover .imgtxt {
+  color: black;
+}
+
+.imgtxt {
+  position: absolute;
+  font-family: myfont;
+  top: 20%;
+  left: 5%;
+  text-align: center;
+  font-size: 3vw;
+  transition: 0.3s linear;
+}
+
+.imgtxt :hover {
+  color: white;
+}
+
+.imgtxt button {
+  width: 8vw;
+  height: 3vw;
+  border: 0;
+  background: goldenrod;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1vw;
+}
+
+#ma p {
+  text-align: center;
+  font-size: 3vw;
+  color: black;
+  background: goldenrod;
+  font-weight: 800;
+  transition: 0.5s linear;
+}
+#ma p:hover {
+  color: goldenrod;
+  background: black;
+}
+.con2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px;
+}
+.info {
+  width: 40%;
+  background: #161414;
+  text-align: center;
+  font-size: 3vw;
+  padding: 5px 20px;
+
+  transition: 0.5s linear;
+}
+
+.info li {
+  padding-right: 5vw;
+}
+.info:hover {
+  background: goldenrod;
+  color: #161414;
+}
+
+.about {
+  width: 40%;
+  background: #161414;
+  padding: 5px 20px;
+  text-align: justify;
+  font-size: 2vw;
+  text-transform: capitalize;
+  transition: 0.5s linear;
+}
+.about:hover {
+  background: goldenrod;
+  color: #161414;
+}
+.Restxt {
+  display: flex;
+  justify-content: center;
+}
+.Restxt p {
+  width: 80%;
+  font-size: 2vw;
+  text-align: center;
+  transition: 0.5s linear;
+  font-family: myf2;
+}
+.Restxt p:hover {
+  color: goldenrod;
+  scale: 1.1;
+}
+.contact {
+  display: flex;
+  justify-content: space-around;
+  transition: 1.5s linear;
+  font-size: 1.5vw;
+}
+.contact .op:hover {
+  color: goldenrod;
+  scale: 1.01;
+}
+.formdiv {
+  margin: auto;
+  width: 50%;
+}
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 3vw;
+  padding: 15px 0px;
+}
+form label {
+  padding: 10px 10px;
+}
+form input:hover {
+  background: grey;
+}
+form input {
+  padding: 20px 0px;
+}
+.formdiv button {
+  width: 100%;
+  height: 50px;
+  background: goldenrod;
+  font-size: 25px;
+  border: none;
+  transition: 0.5s linear;
+  border-radius: 25px;
+}
+.formdiv button:hover {
+  scale: 0.9;
+  background: black;
+  color: goldenrod;
+}
+
+/* *****************For Tab Screen***************** */
+@media (max-width: 768px) {
+  nav label {
+    display: block;
+    margin: 20px 10px;
+    scale: 1.5;
+  }
+  nav ul {
+    display: none;
+    z-index: 99;
+    background: black;
+  }
+  #checkbox:checked ~ ul {
+    display: block;
+    top: 50px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+  }
+}
+/* *****************For Mobile Screen***************** */
+
+@media (max-width: 426px) {
+  nav label {
+    display: block;
+    margin: 20px 10px;
+    scale: 1.5;
+  }
+  nav ul {
+    display: none;
+    background: black;
+    z-index: 99;
+  }
+  #checkbox:checked ~ ul {
+    display: block;
+    top: 50px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+  }
+
+  #navname {
+    padding-left: 15px;
+    width: 10%;
+  }
+
+  nav a {
+    padding-right: 15px;
+  }
+  a::after {
+    display: none;
+  }
+  .imgsec {
+    height: 50%;
+  }
+  .imgtxt {
+    font-size: 5vw;
+    left: 26%;
+  }
+  .imgtxt button {
+    width: 12vw;
+    height: 5vw;
+    font-size: 2vw;
+  }
+
+  .info {
+    max-height: 200px;
+    overflow: hidden;
+  }
+
+  .about {
+    max-height: 200px;
+    overflow: hidden;
+  }
+
+  .formdiv {
+    width: 80%;
+  }
+  .formdiv button {
+    height: 25px;
+    font-size: 15px;
+  }
+}
